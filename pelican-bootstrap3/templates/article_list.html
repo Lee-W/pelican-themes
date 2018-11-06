@@ -9,6 +9,15 @@
                         {% include "includes/article_info.html" %}
                     </div>
                 {% endif %}
+                <footer class="post-info">
+                    <span class="label label-default">Date</span>
+                    <span class="published">
+                        <i class="fa fa-calendar"></i><time datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }}</time>
+                    </span>
+                    {% include 'includes/taglist.html' %}
+                    {% import 'includes/translations.html' as translations with context %}
+                </footer><!-- /.post-info -->
+                <br>
                 <div class="summary">{{ article.summary }}
                     {% include 'includes/comment_count.html' %}
                     <a class="btn btn-default btn-xs" href="{{ SITEURL }}/{{ article.url }}">{{ _('more') }} ...</a>
