@@ -14,7 +14,7 @@
     <section id="categories">
       <h1>{{ _('All Categories for')  }} {{ SITENAME }}</h1>
         <div class="panel-group" id="accordion">
-            {% for category, articles in categories %}
+            {% for category, articles in categories|sort_by_article_count %}
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
