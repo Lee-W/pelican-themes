@@ -56,7 +56,15 @@
                 get the pdf
             </a>
         {% endif %}
+        
+
         <div class="entry-content">
+            {% if page.toc %}
+            <nav class="toc">
+                {{ page.toc }}
+            </nav>
+            {% endif %}
+
             {{ page.content }}
             {% if page.comments == 'enabled' %}
                 {% include 'includes/comments.html' %}
